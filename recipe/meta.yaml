@@ -1,4 +1,4 @@
-{% set version = '0.4' %}
+{% set version = "0.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/plotwidgets_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/plotwidgets/plotwidgets_{{ version }}.tar.gz
-  sha256: 427c0e40d9c2b5d21b811bc56e5ee3245b2d06f626053084cade5fc2f34becf0
+  sha256: 2136053d037091313d75c3f4627128b57c3d11a144be57550f7fe48f93a650d8
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -35,12 +36,11 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=plotwidgets
-  license: GPL (>= 2.0)
-  summary: Small self-contained plots for use in larger plots or to delegate plotting in other
-    functions. Also contains a number of alternative color palettes and HSL color space
-    based tools to modify colors or palettes.
+  license: GPL-2.0-or-later
+  summary: Small self-contained plots for use in larger plots or to delegate plotting in other functions. Also contains a number of alternative color palettes and HSL color space based tools to modify colors or palettes.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
