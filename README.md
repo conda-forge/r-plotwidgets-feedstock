@@ -1,11 +1,11 @@
-About r-plotwidgets
-===================
+About r-plotwidgets-feedstock
+=============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-plotwidgets-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=plotwidgets
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-plotwidgets-feedstock/blob/main/LICENSE.txt)
 
 Summary: Small self-contained plots for use in larger plots or to delegate plotting in other functions. Also contains a number of alternative color palettes and HSL color space based tools to modify colors or palettes.
 
